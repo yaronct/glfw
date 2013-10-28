@@ -587,6 +587,11 @@ int _glfwPlatformWindowVisible(_GLFWwindow* window)
     return GL_FALSE;
 }
 
+void _glfwPlatformSetWindowMonitor(_GLFWwindow* window, _GLFWmonitor* monitor,
+                                   int width, int height, int refreshRate)
+{
+}
+
 void _glfwPlatformPollEvents(void)
 {
     EventNode* node = NULL;

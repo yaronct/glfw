@@ -583,6 +583,11 @@ int _glfwPlatformWindowIconified(_GLFWwindow* window);
  */
 int _glfwPlatformWindowVisible(_GLFWwindow* window);
 
+/*! @copydoc glfwSetWindowMonitor
+ *  @ingroup platform
+ */
+void _glfwPlatformSetWindowMonitor(_GLFWwindow* window, _GLFWmonitor* monitor, int width, int height, int refreshRate);
+
 /*! @copydoc glfwPollEvents
  *  @ingroup platform
  */
@@ -761,6 +766,10 @@ void _glfwInputCursorEnter(_GLFWwindow* window, int entered);
 /*! @ingroup event
  */
 void _glfwInputMonitorChange(void);
+
+/*! @ingroup event
+ */
+void _glfwInputWindowMonitorChange(_GLFWwindow* window, _GLFWmonitor* monitor);
 
 /*! @brief Notifies shared code of an error.
  *  @param[in] error The error code most suitable for the error.
