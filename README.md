@@ -62,6 +62,8 @@ GLFW bundles a number of dependencies in the `deps/` directory.
 
 ## Changelog
 
+ - Added `GLFW_CURSOR_CAPTURED` cursor mode for confining the cursor to the
+   client area of a window
  - Changed minimum required CMake version to 2.8.12
  - Bugfix: Initialization failed on headless systems
  - Bugfix: The cached current context could get out of sync

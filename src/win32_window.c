@@ -79,6 +79,20 @@ static void disableCursor(_GLFWwindow* window)
     }
 }
 
+// Capture the mouse cursor
+//
+static void captureCursor(_GLFWwindow* window)
+{
+    if (window->win32.cursorHidden)
+    {
+        ShowCursor(TRUE);
+        window->win32.cursorHidden = GL_FALSE;
+    }
+
+    updateClipRect(window);
+    SetCapture(window->win32.handle);
+}
+
 // Restores the mouse cursor
 //
 static void restoreCursor(_GLFWwindow* window)
@@ -485,8 +499,11 @@ static LRESULT CALLBACK windowProc(HWND hWnd, UINT uMsg,
         {
             if (_glfw.focusedWindow == window)
             {
-                if (window->cursorMode == GLFW_CURSOR_DISABLED)
+                if (window->cursorMode == GLFW_CURSOR_DISABLED ||
+                    window->cursorMode == GLFW_CURSOR_CAPTURED)
+                {
                     updateClipRect(window);
+                }
             }
 
             if (!window->win32.iconified && wParam == SIZE_MINIMIZED)
@@ -510,8 +527,11 @@ static LRESULT CALLBACK windowProc(HWND hWnd, UINT uMsg,
         {
             if (_glfw.focusedWindow == window)
             {
-                if (window->cursorMode == GLFW_CURSOR_DISABLED)
+                if (window->cursorMode == GLFW_CURSOR_DISABLED ||
+                    window->cursorMode == GLFW_CURSOR_CAPTURED)
+                {
                     updateClipRect(window);
+                }
             }
 
             // NOTE: This cannot use LOWORD/HIWORD recommended by MSDN, as
@@ -1083,6 +1103,9 @@ void _glfwPlatformApplyCursorMode(_GLFWwindow* window)
             break;
         case GLFW_CURSOR_DISABLED:
             disableCursor(window);
+            break;
+        case GLFW_CURSOR_CAPTURED:
+            captureCursor(window);
             break;
     }
 }
