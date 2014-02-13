@@ -154,6 +154,10 @@ typedef struct _GLFWwindowWin32
     GLboolean           cursorInside;
     GLboolean           iconified;
 
+    int                 minwidth, minheight;
+    int                 maxwidth, maxheight;
+    int                 numer, denom;
+
     // The last received cursor position, regardless of source
     int                 cursorPosX, cursorPosY;
 
