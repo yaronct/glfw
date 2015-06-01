@@ -6,16 +6,13 @@ GLFW is a free, Open Source, multi-platform library for OpenGL and OpenGL ES
 application development.  It provides a simple, platform-independent API for
 creating windows and contexts, reading input, handling events, etc.
 
-Version 3.1.2 is _not yet described_.
+Version 3.2 is _not yet described_.
 
 If you are new to GLFW, you may find the
 [introductory tutorial](http://www.glfw.org/docs/latest/quick.html) for GLFW
 3 useful.  If you have used GLFW 2 in the past, there is a
 [transition guide](http://www.glfw.org/docs/latest/moving.html) for moving to
 the GLFW 3 API.
-
-Note that a number of source files have been added or renamed in 3.1, which may
-require you to update any custom build files you have.
 
 
 ## Compiling GLFW
@@ -61,32 +58,6 @@ GLFW bundles a number of dependencies in the `deps/` directory.
 
 
 ## Changelog
-
- - Changed minimum required CMake version to 2.8.12
- - Bugfix: Initialization failed on headless systems
- - Bugfix: The cached current context could get out of sync
- - [Win32] Renamed hybrid GPU override compile-time option to
-           `_GLFW_USE_HYBRID_HPG` and added support for AMD PowerXpress systems
- - [Win32] Bugfix: `glfwGetVideoModes` included unusable modes on some systems
- - [Cocoa] Bugfix: The cached `NSScreen` for a monitor could get out of sync
- - [Cocoa] Bugfix: The `GLFW_AUTO_ICONIFY` window hint was ignored
- - [Cocoa] Bugfix: Resizing a window to its minimum size would segfault
- - [Cocoa] Bugfix: Creating or showing a window would make its context current
- - [Cocoa] Bugfix: Joysticks connected after `glfwInit` were not detected
- - [X11] Bugfix: `glfwInit` would segfault on systems without RandR
- - [X11] Bugfix: The response to `_NET_WM_PING` was sent to the wrong window
- - [X11] Bugfix: Character input via XIM did not work in many cases
- - [X11] Bugfix: No fallback existed for missing `_NET_ACTIVE_WINDOW` support
- - [X11] Bugfix: Some significant window focus events were ignored
- - [X11] Bugfix: The `GLFW_AUTO_ICONIFY` window hint was ignored
- - [X11] Bugfix: The original video mode was not restored on iconification of
-                 full screen windows
- - [X11] Bugfix: `GLFW_ARROW_CURSOR` selected the wrong cursor image
- - [WGL] Removed `GLFW_USE_DWM_SWAP_INTERVAL` compile-time option
- - [WGL] Bugfix: Swap interval was ignored when DWM was enabled
- - [GLX] Added dependency on `libdl` on systems where it provides `dlopen`
- - [GLX] Removed `_GLFW_HAS_GLXGETPROCADDRESS*` and `_GLFW_HAS_DLOPEN`
-         compile-time options
 
 
 ## Contact
