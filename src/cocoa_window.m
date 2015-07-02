@@ -1201,6 +1201,11 @@ void _glfwPlatformSetCursorMode(_GLFWwindow* window, int mode)
         CGAssociateMouseAndMouseCursorPosition(true);
 }
 
+const char* _glfwPlatformGetKeyName(int key, int scancode)
+{
+    return NULL;
+}
+
 int _glfwPlatformCreateCursor(_GLFWcursor* cursor,
                               const GLFWimage* image,
                               int xhot, int yhot)

@@ -73,15 +73,15 @@ static void command_callback(int key)
     {
         case GLFW_KEY_H:
         {
-            printf("H: show this help\n");
-            printf("C: call glfwCreateCursor()\n");
-            printf("D: call glfwDestroyCursor()\n");
-            printf("S: call glfwSetCursor()\n");
-            printf("N: call glfwSetCursor() with NULL\n");
-            printf("1: set GLFW_CURSOR_NORMAL\n");
-            printf("2: set GLFW_CURSOR_HIDDEN\n");
-            printf("3: set GLFW_CURSOR_DISABLED\n");
-            printf("T: enable 3s delay for all previous commands\n");
+            printf("%s: show this help\n", glfwGetKeyName(GLFW_KEY_H, 0));
+            printf("%s: call glfwCreateCursor()\n", glfwGetKeyName(GLFW_KEY_C, 0));
+            printf("%s: call glfwDestroyCursor()\n", glfwGetKeyName(GLFW_KEY_D, 0));
+            printf("%s: call glfwSetCursor()\n", glfwGetKeyName(GLFW_KEY_S, 0));
+            printf("%s: call glfwSetCursor() with NULL\n", glfwGetKeyName(GLFW_KEY_N, 0));
+            printf("%s: set GLFW_CURSOR_NORMAL\n", glfwGetKeyName(GLFW_KEY_1, 0));
+            printf("%s: set GLFW_CURSOR_HIDDEN\n", glfwGetKeyName(GLFW_KEY_2, 0));
+            printf("%s: set GLFW_CURSOR_DISABLED\n", glfwGetKeyName(GLFW_KEY_3, 0));
+            printf("%s: enable 3s delay for all previous commands\n", glfwGetKeyName(GLFW_KEY_T, 0));
         }
         break;
 
